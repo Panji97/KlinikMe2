@@ -198,9 +198,11 @@
                 "Tanggal": "2023/12/01",
                 "AlamatLengkap": "Pekalongan Oyee",
                 "Keahlian": "madang",
-                "LevelPekerjaan": "Entry Level",
-                "Kd_Provinsi": "0",
-                "Kd_KotaKabupaten": "2",
+                "LevelPekerjaan": [
+                  "Senior Level"
+                ],
+                "Kd_Provinsi": "11",
+                "Kd_KotaKabupaten": "1101",
                 "Kodepos": "51162"
               }
             }
@@ -382,7 +384,7 @@
     },
     "/data/employee/v1/show/P001": {
       "get": {
-        "summary": "Show Employee By Id With Certification",
+        "summary": "Show Employee By Id",
         "x-apidog-folder": "Klinik Me/Test2/Employee",
         "x-apidog-status": "developing",
         "deprecated": false,
@@ -433,7 +435,7 @@
             }
           }
         },
-        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4819184-run"
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4815865-run"
       },
       "post": {
         "summary": "Update Employee By Id",
@@ -578,6 +580,62 @@
           }
         },
         "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4818325-run"
+      }
+    },
+    "/data/employee/v1/show-certification/P001": {
+      "get": {
+        "summary": "Show Employee By Id With Certification",
+        "x-apidog-folder": "Klinik Me/Test2/Employee",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Employee"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4819184-run"
       }
     },
     "/data/upload/v1/image-single": {
