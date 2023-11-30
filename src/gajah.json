@@ -1,0 +1,11 @@
+{
+  "MYSQL": {
+    "HOST": "127.0.0.1",
+    "PORT": 3306,
+    "USER": "root",
+    "PASS": "",
+    "NAME": "jobhunt.id"
+  },
+  "CORS": ["http://localhost:5173", "http://localhost:3010"],
+  "KEY": "oFqBkkwx519A/o0nnY4Bxmly2E6FjOma1C/NpT9qw3A="
+}
