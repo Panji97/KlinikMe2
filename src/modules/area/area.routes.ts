@@ -11,7 +11,7 @@ export default class AreaRoutes {
   }
 
   routes(): Router {
-    this.router.get('/v1/area', this.controller.area())
+    this.router.get('/v1/show', this.controller.area())
 
     return this.router
   }

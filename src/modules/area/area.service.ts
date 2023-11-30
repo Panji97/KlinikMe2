@@ -3,10 +3,10 @@ import database from '../../models'
 export default class AreaService {
   public async showArea() {
     try {
-      const dataArea = await database.ms_kota.findAll({
+      const dataArea = await database.ms_provinsi.findAll({
         include: {
-          model: database.ms_provinsi,
-          as: 'Kd_Provinsi_ms_provinsi'
+          model: database.ms_kota,
+          as: 'ms_kota'
         }
       })
 
