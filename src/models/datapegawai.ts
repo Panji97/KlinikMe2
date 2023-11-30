@@ -7,19 +7,18 @@ export interface datapegawaiAttributes {
   Tanggal: string;
   Umur: number;
   AlamatLengkap: string;
-  Keahlian?: string;
-  LevelPekerjaan: string;
   Kd_Provinsi: string;
   Kd_KotaKabupaten: string;
   Kodepos: string;
   Created_at?: Date;
   createdAt?: Date;
   updatedAt?: Date;
+  LevelPekerjaan: 'Entry Level' | 'Middle Level' | 'Senior Level';
 }
 
 export type datapegawaiPk = "Id_Pegawai";
 export type datapegawaiId = datapegawai[datapegawaiPk];
-export type datapegawaiOptionalAttributes = "Keahlian" | "Created_at" | "createdAt" | "updatedAt";
+export type datapegawaiOptionalAttributes = "Created_at" | "createdAt" | "updatedAt";
 export type datapegawaiCreationAttributes = Optional<datapegawaiAttributes, datapegawaiOptionalAttributes>;
 
 export class datapegawai extends Model<datapegawaiAttributes, datapegawaiCreationAttributes> implements datapegawaiAttributes {
@@ -28,14 +27,13 @@ export class datapegawai extends Model<datapegawaiAttributes, datapegawaiCreatio
   Tanggal!: string;
   Umur!: number;
   AlamatLengkap!: string;
-  Keahlian?: string;
-  LevelPekerjaan!: string;
   Kd_Provinsi!: string;
   Kd_KotaKabupaten!: string;
   Kodepos!: string;
   Created_at?: Date;
   createdAt?: Date;
   updatedAt?: Date;
+  LevelPekerjaan!: 'Entry Level' | 'Middle Level' | 'Senior Level';
 
 
   static initModel(sequelize: Sequelize.Sequelize): typeof datapegawai {
@@ -61,14 +59,6 @@ export class datapegawai extends Model<datapegawaiAttributes, datapegawaiCreatio
       type: DataTypes.STRING(150),
       allowNull: false
     },
-    Keahlian: {
-      type: DataTypes.STRING(255),
-      allowNull: true
-    },
-    LevelPekerjaan: {
-      type: DataTypes.STRING(50),
-      allowNull: false
-    },
     Kd_Provinsi: {
       type: DataTypes.STRING(2),
       allowNull: false
@@ -79,6 +69,10 @@ export class datapegawai extends Model<datapegawaiAttributes, datapegawaiCreatio
     },
     Kodepos: {
       type: DataTypes.STRING(5),
+      allowNull: false
+    },
+    LevelPekerjaan: {
+      type: DataTypes.ENUM('Entry Level','Middle Level','Senior Level'),
       allowNull: false
     }
   }, {

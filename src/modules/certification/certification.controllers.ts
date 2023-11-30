@@ -32,4 +32,16 @@ export default class CertificationControllers extends ErrorHandler {
       }
     }
   }
+
+  public delete() {
+    return async (req: Request, res: Response) => {
+      try {
+        const data = await this.service.deleteCertification(String(req.params.id))
+
+        return res.status(200).json({ message: data.message, result: data.result })
+      } catch (error) {
+        this.handleError(error, req, res)
+      }
+    }
+  }
 }

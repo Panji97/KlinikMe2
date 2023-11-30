@@ -39,4 +39,18 @@ export default class CertificationService {
       throw error
     }
   }
+
+  public async deleteCertification(paramsId: string) {
+    try {
+      await database.sertifikasipegawai.destroy({
+        where: {
+          Id_Sertifikasi: paramsId
+        }
+      })
+
+      return { message: 'Success delete sertification', result: null }
+    } catch (error) {
+      throw error
+    }
+  }
 }

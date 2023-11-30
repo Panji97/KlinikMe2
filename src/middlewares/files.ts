@@ -8,7 +8,7 @@ export class MulterConfig {
   private uploadXlsx: Multer
 
   constructor() {
-    this.uploadImage = multer({ dest: 'public/img' })
+    this.uploadImage = multer({ dest: 'public/img', limits: { fileSize: 5 * 1024 * 1024 } })
     this.uploadVideo = multer({ dest: 'public/video' })
     this.uploadFile = multer({ dest: 'public/storage' })
     this.uploadXlsx = multer({ dest: 'public/settlement' })

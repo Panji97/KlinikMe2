@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2023 at 12:38 PM
+-- Generation Time: Nov 30, 2023 at 02:31 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -55,23 +55,46 @@ CREATE TABLE `datapegawai` (
   `Tanggal` date NOT NULL,
   `Umur` int(3) NOT NULL,
   `AlamatLengkap` varchar(150) NOT NULL,
-  `Keahlian` varchar(255) DEFAULT NULL,
-  `LevelPekerjaan` varchar(50) NOT NULL,
   `Kd_Provinsi` varchar(2) NOT NULL,
   `Kd_KotaKabupaten` varchar(4) NOT NULL,
   `Kodepos` varchar(5) NOT NULL,
   `Created_at` datetime(6) DEFAULT current_timestamp(6),
   `createdAt` datetime DEFAULT current_timestamp(),
-  `updatedAt` datetime DEFAULT current_timestamp()
+  `updatedAt` datetime DEFAULT current_timestamp(),
+  `LevelPekerjaan` enum('Entry Level','Middle Level','Senior Level') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `datapegawai`
 --
 
-INSERT INTO `datapegawai` (`Id_Pegawai`, `NamaLengkap`, `Tanggal`, `Umur`, `AlamatLengkap`, `Keahlian`, `LevelPekerjaan`, `Kd_Provinsi`, `Kd_KotaKabupaten`, `Kodepos`, `Created_at`, `createdAt`, `updatedAt`) VALUES
-('P001', 'Panji Setyo Kurniawan Updated', '2023-12-01', -1, 'Pekalongan Oyee', 'madang', 'Entry Level', '0', '2', '51162', '2023-11-29 15:11:33.313350', '2023-11-29 15:11:33', '2023-11-29 17:46:08'),
-('P002', 'Andira Permatasari', '2023-12-01', -1, 'Pekalongan Oyee', 'madang', 'Entry Level', '0', '2', '51162', '2023-11-30 00:38:24.940056', '2023-11-30 00:38:24', '2023-11-30 00:38:24');
+INSERT INTO `datapegawai` (`Id_Pegawai`, `NamaLengkap`, `Tanggal`, `Umur`, `AlamatLengkap`, `Kd_Provinsi`, `Kd_KotaKabupaten`, `Kodepos`, `Created_at`, `createdAt`, `updatedAt`, `LevelPekerjaan`) VALUES
+('P001', 'Panji Setyo Kurniawan Updated', '2023-12-01', -1, 'Pekalongan Oyee', '0', '2', '51162', '2023-11-29 15:11:33.313350', '2023-11-29 15:11:33', '2023-11-29 17:46:08', ''),
+('P002', 'Andira Permatasari', '2023-12-01', -1, 'Pekalongan Oyee', '0', '2', '51162', '2023-11-30 00:38:24.940056', '2023-11-30 00:38:24', '2023-11-30 00:38:24', ''),
+('P003', 'Panji Setyo Kurniawan', '2023-12-01', -1, 'Pekalongan Oyee', '11', '1101', '51162', '2023-11-30 12:25:44.336177', '2023-11-30 12:25:44', '2023-11-30 12:25:44', ''),
+('P004', 'Panji Setyo Kurniawan2', '2023-12-01', -1, 'Pekalongan Oyee', '11', '1101', '51162', '2023-11-30 12:26:21.715605', '2023-11-30 12:26:21', '2023-11-30 12:26:21', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `keahlian`
+--
+
+CREATE TABLE `keahlian` (
+  `id` int(11) NOT NULL,
+  `value` varchar(20) NOT NULL,
+  `Id_Pegawai` varchar(5) NOT NULL,
+  `createdAt` datetime DEFAULT current_timestamp(),
+  `updatedAt` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `keahlian`
+--
+
+INSERT INTO `keahlian` (`id`, `value`, `Id_Pegawai`, `createdAt`, `updatedAt`) VALUES
+(1, 'madang', 'P003', '2023-11-30 12:25:44', '2023-11-30 12:25:44'),
+(2, 'memasak', 'P003', '2023-11-30 12:25:44', '2023-11-30 12:25:44');
 
 -- --------------------------------------------------------
 
@@ -723,7 +746,7 @@ CREATE TABLE `userlogin` (
 --
 
 INSERT INTO `userlogin` (`Id_User`, `Email`, `Username`, `Password`, `Token`, `Created_at`, `Modified_at`, `createdAt`, `updatedAt`) VALUES
-('User001', 'Admin@gmail.com', 'Admin12', '33ddc38812e8597161d1d6eda2816d2371664366a76cf6f589654254ed913d66', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9Vc2VyIjoiVXNlcjAwMSIsIkVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzAxMzI1ODc2LCJleHAiOjE3MDE5MzA2NzZ9.TB6kCx9OopNhCZNe-95nO90PLrllGgWFio3W_68Ghyw', '2023-11-29 14:10:37', NULL, '2023-11-29 14:10:37', '2023-11-30 06:31:16');
+('User001', 'Admin@gmail.com', 'Admin12', '33ddc38812e8597161d1d6eda2816d2371664366a76cf6f589654254ed913d66', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZF9Vc2VyIjoiVXNlcjAwMSIsIkVtYWlsIjoiQWRtaW5AZ21haWwuY29tIiwiaWF0IjoxNzAxMzQ1MjM4LCJleHAiOjE3MDE5NTAwMzh9.iC3myJNi-BKQgbUm1bC0BSMe0grKLxvvBbOAFtIkXO0', '2023-11-29 14:10:37', NULL, '2023-11-29 14:10:37', '2023-11-30 11:53:58');
 
 --
 -- Indexes for dumped tables
@@ -740,6 +763,13 @@ ALTER TABLE `bidang`
 --
 ALTER TABLE `datapegawai`
   ADD PRIMARY KEY (`Id_Pegawai`);
+
+--
+-- Indexes for table `keahlian`
+--
+ALTER TABLE `keahlian`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Id_Pegawai` (`Id_Pegawai`);
 
 --
 -- Indexes for table `ms_kota`
@@ -770,8 +800,24 @@ ALTER TABLE `userlogin`
   ADD UNIQUE KEY `Username` (`Username`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `keahlian`
+--
+ALTER TABLE `keahlian`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `keahlian`
+--
+ALTER TABLE `keahlian`
+  ADD CONSTRAINT `keahlian_ibfk_1` FOREIGN KEY (`Id_Pegawai`) REFERENCES `datapegawai` (`Id_Pegawai`);
 
 --
 -- Constraints for table `ms_kota`

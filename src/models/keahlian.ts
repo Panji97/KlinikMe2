@@ -3,21 +3,23 @@ import { DataTypes, Model, Optional } from 'sequelize';
 
 export interface keahlianAttributes {
   id: number;
-  name: string;
-  Created_at?: Date;
-  Updated_at?: Date;
+  value: string;
+  Id_Pegawai: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export type keahlianPk = "id";
 export type keahlianId = keahlian[keahlianPk];
-export type keahlianOptionalAttributes = "id" | "Created_at" | "Updated_at";
+export type keahlianOptionalAttributes = "id" | "createdAt" | "updatedAt";
 export type keahlianCreationAttributes = Optional<keahlianAttributes, keahlianOptionalAttributes>;
 
 export class keahlian extends Model<keahlianAttributes, keahlianCreationAttributes> implements keahlianAttributes {
   id!: number;
-  name!: string;
-  Created_at?: Date;
-  Updated_at?: Date;
+  value!: string;
+  Id_Pegawai!: string;
+  createdAt?: Date;
+  updatedAt?: Date;
 
 
   static initModel(sequelize: Sequelize.Sequelize): typeof keahlian {
@@ -28,9 +30,17 @@ export class keahlian extends Model<keahlianAttributes, keahlianCreationAttribut
       allowNull: false,
       primaryKey: true
     },
-    name: {
-      type: DataTypes.STRING(100),
+    value: {
+      type: DataTypes.STRING(20),
       allowNull: false
+    },
+    Id_Pegawai: {
+      type: DataTypes.STRING(5),
+      allowNull: false,
+      references: {
+        model: 'datapegawai',
+        key: 'Id_Pegawai'
+      }
     }
   }, {
     sequelize,
@@ -43,6 +53,13 @@ export class keahlian extends Model<keahlianAttributes, keahlianCreationAttribut
         using: "BTREE",
         fields: [
           { name: "id" },
+        ]
+      },
+      {
+        name: "Id_Pegawai",
+        using: "BTREE",
+        fields: [
+          { name: "Id_Pegawai" },
         ]
       },
     ]

@@ -16,6 +16,7 @@ export default class CertificationRoutes {
   routes(): Router {
     this.router.post('/v1/create', this.validation.createCertification(), this.controller.create())
     this.router.get('/v1/show', this.controller.show())
+    this.router.get('/v1/delete/:id', this.controller.delete())
 
     return this.router
   }
