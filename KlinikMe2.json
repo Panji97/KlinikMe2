@@ -1,0 +1,671 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "My Project",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Klinik Me"
+    },
+    {
+      "name": "Klinik Me/Test2"
+    },
+    {
+      "name": "Klinik Me/Test2/Auth"
+    },
+    {
+      "name": "Klinik Me/Test2/Employee"
+    },
+    {
+      "name": "Klinik Me/Test2/Area"
+    },
+    {
+      "name": "Klinik Me/Test2/Department"
+    },
+    {
+      "name": "Klinik Me/Test2/Certification"
+    },
+    {
+      "name": "Klinik Me/Test2/Upload"
+    }
+  ],
+  "paths": {
+    "/o/oauth/v1/register": {
+      "post": {
+        "summary": "Register",
+        "x-apidog-folder": "Klinik Me/Test2/Auth",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Auth"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": {
+                "Email": "Admin@gmail.com",
+                "Username": "Admin12",
+                "Password": "1234"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4814498-run"
+      }
+    },
+    "/o/oauth/v1/login": {
+      "post": {
+        "summary": "Login",
+        "x-apidog-folder": "Klinik Me/Test2/Auth",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Auth"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": {
+                "Email": "admin@gmail.com",
+                "Password": "1234"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "object",
+                      "properties": {
+                        "Token": {
+                          "type": "string"
+                        },
+                        "Id_User": {
+                          "type": "string"
+                        },
+                        "Email": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "Token",
+                        "Id_User",
+                        "Email"
+                      ],
+                      "x-apidog-ignore-properties": [],
+                      "x-apidog-orders": [
+                        "Token",
+                        "Id_User",
+                        "Email"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4814514-run"
+      }
+    },
+    "/data/employee/v1/create": {
+      "post": {
+        "summary": "Create Employee",
+        "x-apidog-folder": "Klinik Me/Test2/Employee",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Employee"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": {
+                "NamaLengkap": "Panji Setyo Kurniawan",
+                "Tanggal": "2023/12/01",
+                "AlamatLengkap": "Pekalongan Oyee",
+                "Keahlian": "madang",
+                "LevelPekerjaan": "Entry Level",
+                "Kd_Provinsi": "0",
+                "Kd_KotaKabupaten": "2",
+                "Kodepos": "51162"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4814839-run"
+      }
+    },
+    "/data/employee/v1/show": {
+      "get": {
+        "summary": "Show All Employee",
+        "x-apidog-folder": "Klinik Me/Test2/Employee",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Employee"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4814855-run"
+      }
+    },
+    "/data/area/v1/province": {
+      "get": {
+        "summary": "Show Area",
+        "x-apidog-folder": "Klinik Me/Test2/Area",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Area"
+        ],
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "status",
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4814862-run"
+      }
+    },
+    "/data/department/v1/create": {
+      "post": {
+        "summary": "Create Department",
+        "x-apidog-folder": "Klinik Me/Test2/Department",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Department"
+        ],
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "status",
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4815574-run"
+      }
+    },
+    "/data/employee/v1/show/P001": {
+      "get": {
+        "summary": "Show Employee By Id With Certification",
+        "x-apidog-folder": "Klinik Me/Test2/Employee",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Employee"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4819184-run"
+      },
+      "post": {
+        "summary": "Update Employee By Id",
+        "x-apidog-folder": "Klinik Me/Test2/Employee",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Employee"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": "{\r\n    \"NamaLengkap\": \"Panji Setyo Kurniawan Updated\",\r\n}"
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "result": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "result"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "message",
+                    "result"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4815870-run"
+      }
+    },
+    "/data/certification/v1/create": {
+      "post": {
+        "summary": "Create Certification",
+        "x-apidog-folder": "Klinik Me/Test2/Certification",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Certification"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apidog-ignore-properties": [],
+                "x-apidog-orders": []
+              },
+              "example": {
+                "Id_Pegawai": "P001",
+                "Id_Bidang": "string",
+                "NamaLembaga": "string",
+                "DokumentasiSertifikat": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4818324-run"
+      }
+    },
+    "/data/department/v1/show": {
+      "get": {
+        "summary": "Show All Department",
+        "x-apidog-folder": "Klinik Me/Test2/Department",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Department"
+        ],
+        "parameters": [],
+        "responses": {
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "status",
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4818325-run"
+      }
+    },
+    "/data/upload/v1/image-single": {
+      "post": {
+        "summary": "Upload Single Image",
+        "x-apidog-folder": "Klinik Me/Test2/Upload",
+        "x-apidog-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "Klinik Me/Test2/Upload"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "example": "file://C:\\Users\\User\\Downloads\\KTP - Panji setyo kurniawan.png",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "msg": {
+                            "type": "string"
+                          },
+                          "path": {
+                            "type": "string"
+                          },
+                          "location": {
+                            "type": "string"
+                          }
+                        },
+                        "x-apidog-ignore-properties": [],
+                        "x-apidog-orders": [
+                          "type",
+                          "msg",
+                          "path",
+                          "location"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "message"
+                  ],
+                  "x-apidog-ignore-properties": [],
+                  "x-apidog-orders": [
+                    "status",
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apidog": "https://apidog.com/web/project/377472/apis/api-4820563-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "servers": []
+}
